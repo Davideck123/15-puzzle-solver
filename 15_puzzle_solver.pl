@@ -78,8 +78,8 @@ manhattan(Current, Final, Num, Sum) :-
 
 % Use this heuristic if you don't want to generate boards for walking distance heuristic
 
-%heuristic(Current, Final, Res) :-
-%    manhattan(Current, Final, M),
+%heuristic(Current, _, Res) :-
+%    manhattan(Current, M),
 %    inversion_distance(Current, I),
 %    Res is max(M, I).
 

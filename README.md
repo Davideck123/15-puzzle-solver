@@ -8,6 +8,19 @@ to generate all 24964 possible boards for this heuristic (otherwise it won't wor
 
 You can also use a much weaker heuristic (which doesn't have to generate anything) `MAX(inversion distance, manhattan)` but you have to change the `heuristic` in the code.
 
+```prolog
+% Use this heuristic if you don't want to generate boards for walking distance heuristic
+
+%heuristic(Current, _, Res) :-
+%    manhattan(Current, M),
+%    inversion_distance(Current, I),
+%    Res is max(M, I).
+
+
+heuristic(Current, _, Res) :-
+    get_walking_distance(Current, Res).
+```
+
 Then you can simply run 
 ```prolog
 solve([1,10,15,4,0,13,6,8,2,9,3,7,14,5,12,11],  M).
@@ -20,7 +33,14 @@ time((solve([1,10,15,4,0,13,6,8,2,9,3,7,14,5,12,11],  M), write(M), length(M,L))
 The solvabilty of the particular configuration is tested at the start of the `solve`.
 You can also try to run prepared tests:
 - `test0` - unsolvable
-- `test1` ... `test6` - each shouldn't take more than a couple of minutes at max
+- `test1` - 35 moves
+- `test2` - 36 moves
+- `test3` - 37 moves
+- `test4` - 40 moves
+- `test5` - 41 moves
+- `test6` - 46 moves
+
+Each test shouldn't take more than a couple of minutes at max
 
 ### Interesting and helpful information about Walking distance and 15 puzzle in general:
 
