@@ -22,6 +22,8 @@ heuristic(Current, _, Res) :-
 ```
 
 The puzzle board is represented as one list of numbers 0-15 left to right, top to bottom, eg. the final state is represented as `[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0]`.
+
+
 Then you can simply run (for example)
 ```prolog
 solve([1,10,15,4,0,13,6,8,2,9,3,7,14,5,12,11],  M).
